@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Каталог — ИП Хрюкин Е.А.</title>
+  <meta name="description" content="Каталог металлоконструкций: балки, колонны, фермы, лестницы, ограждения и др." />
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/script.js"></script>
+</head>
+<body>
+  <header>
+  <div class="container nav">
+    <a class="brand" href="/">
+      <span class="brand-name">ИП Хрюкин Е.А.</span>
+    </a>
+    <nav class="menu" aria-label="Основная навигация">
+      <a href="/" id="nav-home">Главная</a>
+      <a href="/catalog.html" id="nav-catalog" aria-current="page">Каталог</a>
+      <a href="/about.html" id="nav-about">О компании</a>
+    </nav>
+    <button class="btn btn-secondary btn-callback" data-open-callback>Обратный звонок</button>
+  </div>
+</header>
+  <main class="container">
+    <section class="hero hero-catalog">
+      <h1>Каталог</h1>
+      <p class="lead">Производим типовые и нестандартные металлоконструкции под ваши задачи. Если не нашли нужную позицию — оставьте заявку, мы рассчитаем стоимость по ТЗ.</p>
+      <div class="catalog-toolbar">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <select id="catalog-category" class="input" style="min-width: 200px;" onchange="filterCatalog()">
+            <option value="">Все категории</option>
+            <option value="beams">Балки и перекрытия</option>
+            <option value="columns">Колонны и опоры</option>
+            <option value="trusses">Фермы и стропила</option>
+            <option value="stairs">Лестницы и площадки</option>
+            <option value="fences">Ограждения</option>
+            <option value="custom">Нестандартные изделия</option>
+          </select>
+          <input id="catalog-search" class="input" type="search" placeholder="Поиск по каталогу" style="flex: 1; min-width: 200px;" oninput="filterCatalog()" />
+        </div>
+      </div>
+      <div id="catalog-grid" class="catalog-grid">
+        <article class="card" data-category="beams">
+          <h3>Балки двутавровые</h3>
+          <p>Сварные и горячекатаные. По ГОСТ и ТУ.</p>
+          <button class="btn" data-open-callback data-product="Балки двутавровые">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="beams">
+          <h3>Балки швеллерные</h3>
+          <p>Горячекатаные и гнутые швеллеры различных размеров.</p>
+          <button class="btn" data-open-callback data-product="Балки швеллерные">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="beams">
+          <h3>Балки перекрытий</h3>
+          <p>Металлические балки для межэтажных перекрытий.</p>
+          <button class="btn" data-open-callback data-product="Балки перекрытий">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="columns">
+          <h3>Колонны</h3>
+          <p>Проектирование и изготовление колонн любой сложности.</p>
+          <button class="btn" data-open-callback data-product="Колонны">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="columns">
+          <h3>Опорные стойки</h3>
+          <p>Металлические опорные стойки для строительных конструкций.</p>
+          <button class="btn" data-open-callback data-product="Опорные стойки">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="trusses">
+          <h3>Фермы</h3>
+          <p>Лёгкие и тяжёлые фермы для перекрытий и покрытий.</p>
+          <button class="btn" data-open-callback data-product="Фермы">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="trusses">
+          <h3>Стропильные системы</h3>
+          <p>Металлические стропила для кровельных конструкций.</p>
+          <button class="btn" data-open-callback data-product="Стропильные системы">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="stairs">
+          <h3>Лестницы и площадки</h3>
+          <p>Марши, ограждения, ступени, настилы. Оцинковка по требованию.</p>
+          <button class="btn" data-open-callback data-product="Лестницы и площадки">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="stairs">
+          <h3>Винтовые лестницы</h3>
+          <p>Металлические винтовые лестницы для внутренних помещений.</p>
+          <button class="btn" data-open-callback data-product="Винтовые лестницы">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="fences">
+          <h3>Ограждения и перила</h3>
+          <p>Промышленные и общественные объекты, порошковая окраска.</p>
+          <button class="btn" data-open-callback data-product="Ограждения и перила">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="fences">
+          <h3>Заборы из металла</h3>
+          <p>Металлические заборы и ограждения для частных и промышленных объектов.</p>
+          <button class="btn" data-open-callback data-product="Заборы из металла">Запросить расчёт</button>
+        </article>
+        <article class="card" data-category="custom">
+          <h3>Нестандартные изделия</h3>
+          <p>Изготовление по чертежам заказчика и разработка КМД.</p>
+          <button class="btn" data-open-callback data-product="Нестандартные изделия">Запросить расчёт</button>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Почему мы</h2>
+      <div class="features">
+        <div class="feature"><h3>Стабильные сроки</h3><p>Планируем производство, чтобы отгружать без задержек.</p></div>
+        <div class="feature"><h3>Качество</h3><p>Материалы с сертификатами, входной и выходной контроль.</p></div>
+        <div class="feature"><h3>Гибкость</h3><p>От единичных изделий до серий. Индивидуальные решения по ТЗ.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Не нашли нужную позицию?</h2>
+      <p class="lead">Мы рассчитаем стоимость по вашим чертежам или поможем разработать КМ/КМД.</p>
+      <div class="actions">
+        <button class="btn btn-primary" data-open-callback>Запросить расчёт</button>
+        <a class="btn" href="/about.html">Узнать о компании</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+  <div class="container">
+    © ИП Хрюкин Е.А., 2025 · Тел.: +7 951 477-26-48 · E-mail: info@stalpro.ru
+  </div>
+</footer>
+
+  <dialog id="callback-modal" class="modal">
+    <form id="callback-form" class="form" method="dialog" enctype="multipart/form-data">
+      <h3>Заявка на обратный звонок</h3>
+      <div id="cb-success" class="form-success" role="status" aria-live="polite"></div>
+      <div id="cb-error" class="form-error" role="alert"></div>
+      <div class="field"><label for="cb-name">Имя*</label><input class="input" id="cb-name" name="name" required /></div>
+      <div class="field"><label for="cb-phone">Телефон*</label><input class="input" id="cb-phone" name="phone" inputmode="tel" required /></div>
+      <div class="field"><label for="cb-email">Email</label><input class="input" type="email" id="cb-email" name="email" /></div>
+      <div class="field"><label for="cb-product-type">Тип продукции</label><input class="input" id="cb-product-type" name="productType" placeholder="Например: Балки двутавровые" /></div>
+      <div class="field"><label for="cb-comment">Комментарий</label><textarea class="textarea" id="cb-comment" name="comment" rows="3"></textarea></div>
+      <div class="field">
+        <label for="cb-file">Прикрепить файл (чертежи, схемы)</label>
+        <input class="input" type="file" id="cb-file" name="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.dwg,.dxf" />
+        <p class="form-hint" style="margin-top: 4px;">Максимальный размер: 10 МБ. Форматы: PDF, DOC, DOCX, JPG, PNG, DWG, DXF</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Отправить</button>
+        <button class="btn" type="reset" data-close-callback>Отмена</button>
+      </div>
+      <p class="form-hint">Нажимая «Отправить», вы соглашаетесь с обработкой персональных данных.</p>
+    </form>
+  </dialog>
+</body>
+</html>
+
